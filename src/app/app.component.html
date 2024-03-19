@@ -1,0 +1,20 @@
+<h1>Excel Project Created by Vaibhav Bhujbal</h1>
+<br>
+<br>
+<br>
+<br>
+<input type="file" (change)="ReadExcel($event)" class="bg-primary form-control w-25 m-5 border border-black">
+<div class="container">
+  <table border [cellPadding]="10" class="table table-bordered text-center" style="table-layout: fixed" [border] [cellPadding]="20">
+    <thead>
+      <tr>
+        <th *ngFor="let header of headers" class="text-center">{{ header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of ExcelData">
+        <td *ngFor="let key of headerKeys" >{{ data[key] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
